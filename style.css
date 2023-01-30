@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  background-color: #75975e;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.tab-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.tab:hover {
+  background-color: #c7ddb5;
+  color: #0b1117;
+}
+
+.tab {
+  list-style-type: none;
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.tab-active {
+  background-color: #c7ddb5;
+  }
+
+  
+.panel-group {
+  border: solid 1px #75975e;
+  border-top: none;
+  border-radius: none;
+  background: #c7ddb5;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  width: 100%;
+  flex-grow: 1;
+}
+.signature {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 10px;
+}
+
+.panel {
+  display: none;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.panel.is-show {
+  display: block;
+  color: #3a4c40;
+}
+@media (min-width: 640px) {
+  .panel {
+    max-width: 640px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .panel {
+    max-width: 768px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .panel {
+    max-width: 1024px;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .panel {
+    max-width: 1280px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+@media (min-width: 1536px) {
+  .panel {
+    max-width: 1536px;
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+#toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}

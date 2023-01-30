@@ -1,0 +1,38 @@
+
+  .panel-group h1 {
+    font-size: 40px;
+  }
+
+
+  .panel-group table {
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  
+  .panel-group table tr {
+    margin-top: 5px;
+    display: block;
+  }
+  
+  .panel-group table button {
+    margin-top: 10px;
+    background-color: #75975e;
+    color: wheat;
+    border-radius: 1ch;
+    padding: 6px;
+    cursor: pointer;
+    border: 0.125rem solid #00000053;
+  }
+  
+  .panel-group table button:hover {
+    background-color: wheat;
+    color: #75975e;
+  }
+  
+  .panel-group table button:active {
+    transform: translateY(2px);
+  }
+  
+ 
+

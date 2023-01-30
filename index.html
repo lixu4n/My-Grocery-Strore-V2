@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Grocery Store</title>
+    <script src="./products.js"></script>
+    <script src="./scripts/requirements.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="account.css" rel="stylesheet" type="text/css" />
+    <link href="cart.css" rel="stylesheet" type="text/css" />
+    <link href="products.css" rel="stylesheet" type="text/css" />
+    <script src="myscript.js"></script>
+  </head>
+  <body>
+    <div class="tab-panel">
+      <header>
+        <!--add website link-->
+        <a href="#" class="logo">YUMS!</a>
+        <ul class="tab-group">
+          <li class="tab tab-A is-active"><a>Home</a></li>
+          <li class="tab tab-B"><a>Account</a></li>
+          <li class="tab tab-C"><a>Products</a></li>
+          <li class="tab tab-D"><a>Cart</a></li>
+        </ul>
+      </header>
+    </div>
+
+    <!--Add Content here-->
+    <div class="panel-group">
+      <!--
+         Home Tab
+            
+       -->
+      <div class="panel tab-A is-show">
+        <h4>Welcome to YUMS!</h4>
+        <br />
+        <p>Satisfy your cravings anytime with YUMS! quality products.</p>
+        <br />
+
+        <p>
+          Here at YUMS! We are dedicated to offer products for all kinds of
+          people. Please go ahead to the Account tab to enter your restrictions.
+          We will provide you with an amazing personalized shopping experience!
+        </p>
+      </div>
+      <!--
+              Account tabs
+              Account tab
+            
+            -->
+      <div class="panel tab-B">
+        <h1>Welcome to your YUMS! account.</h1>
+        <br />
+        <p>Tell us a more about you.</p>
+        <br />
+        <p>Choose your restrictions:</p>
+        <br />
+        <table>
+          <tr>
+            <td>
+              <input
+                type="checkbox"
+                id="vegetarian"
+                name="vegetarian"
+                class="requirements"
+              />
+            </td>
+            <td>
+              <label for="vegetarian"> Vegetarian</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="checkbox"
+                id="glutenFree"
+                name="glutenFree"
+                class="requirements"
+              />
+            </td>
+            <td><label for="glutenFree"> Gluten Free</label></td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="checkbox"
+                id="organic"
+                name="organic"
+                class="requirements"
+              />
+            </td>
+            <td><label for="organic">Organic</label></td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="checkbox"
+                id="nonOrganic"
+                name="nonOrganic"
+                class="requirements"
+              />
+            </td>
+            <td>
+              <label for="nonOrganic">Non organic</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button onclick="getRequirements()">Confirm Restrictions</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="panel tab-C">
+        <h2>Your YUMS! Store</h2>
+        <br />
+        <p>We preselected products based on your restrictions.</p>
+        <br />
+        <p>Choose items to buy.</p>
+        <br />
+
+        <div class="products-container"></div>
+        <br />
+        <div>
+          <button onclick="renderCart()">Add Items</button>
+        </div>
+      </div>
+      <div class="panel tab-D">
+        <h3>This is your shopping cart</h3>
+        <br />
+        <br />
+        <p>Your total is :</p>
+        <div id="displayCart"></div>
+        <br />
+        <br />
+        <p>Thank You for shopping at YUMS!</p>
+      </div>
+    </div>
+    <div>
+      <p id="toast"></p>
+    </div>
+    <div class="signature">By Céleste Duguay, Chentao Jin & Chloé Dumas</div>
+  </body>
+</html>
