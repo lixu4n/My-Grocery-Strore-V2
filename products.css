@@ -40,10 +40,8 @@ font-size: 30px;
 
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  grid-auto-rows: 1fr;
-  grid-gap: 1rem;
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
 }
 
 .product {
