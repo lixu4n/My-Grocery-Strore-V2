@@ -40,6 +40,47 @@ font-size: 30px;
 
 .products-container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.products-container input {
+  display: none;
+}
+
+.products-container img {
+  width: 4rem;
+  height: 4rem;
+  align-self: center;
+}
+
+.product {
+  display: flex;
   flex-direction: column;
-  padding-left: 2rem;
+  align-items: space-between;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 0.4rem solid #00000053;
+  border-radius: 0.7rem;
+  padding: 0.8rem;
+  transition: all 100ms ease-in-out;
+}
+
+.product:has(input[type="checkbox"]:checked) {
+  background-color: #75975e;
+  color: white;
+}
+
+.product > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: space-between;
+  flex-wrap: wrap;
+}
+
+.product > div > span + span::before {
+  content: "•";
+  margin: 0 0.5rem;
 }
