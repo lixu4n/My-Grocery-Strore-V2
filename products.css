@@ -39,17 +39,19 @@ font-size: 30px;
   }
 
 .products-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 1rem;
+  width: 100%;
+  padding: 1rem;
 }
 
 .product {
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
   border: 0.4rem solid #00000053;
   border-radius: 0.7rem;
@@ -80,8 +82,7 @@ font-size: 30px;
 .product > div {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
