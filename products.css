@@ -40,8 +40,9 @@ font-size: 30px;
 
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-template-columns: repeat(auto-fit, 12rem);
   grid-auto-rows: 1fr;
+  justify-content: center;
   grid-gap: 1rem;
   width: 100%;
   padding: 1rem;
@@ -52,7 +53,6 @@ font-size: 30px;
   flex-direction: column;
   align-items: space-between;
   justify-content: center;
-  gap: 1rem;
   border: 0.4rem solid #00000053;
   border-radius: 0.7rem;
   padding: 0.8rem;
@@ -66,6 +66,8 @@ font-size: 30px;
 .product img {
   width: 4rem;
   height: 4rem;
+  padding: 1rem;
+  box-sizing: content-box;
   align-self: center;
   user-select: none;
 }
@@ -81,12 +83,5 @@ font-size: 30px;
 
 .product > div {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.product > div > span + span::before {
-  content: "•";
-  margin: 0 0.5rem;
+  flex-direction: column;
 }
