@@ -6,6 +6,7 @@ const products = [
       vegetarian: false,
       glutenFree: false,
       price: 8,
+      img: "chicken-leg.png",
     },
     {
       id: 2,
@@ -14,6 +15,7 @@ const products = [
       vegetarian: false,
       glutenFree: false,
       price: 12,
+      img: "salmon.png",
     },
     {
       id: 3,
@@ -22,6 +24,7 @@ const products = [
       vegetarian: true,
       glutenFree: false,
       price: 3,
+      img: "rice.png",
     },
     {
       id: 4,
@@ -30,6 +33,7 @@ const products = [
       vegetarian: true,
       glutenFree: true,
       price: 5,
+      img: "bread.png",
     },
     {
       id: 5,
@@ -38,6 +42,7 @@ const products = [
       vegetarian: true,
       glutenFree: true,
       price: 2,
+      img: "tofu.png",
     },
     {
       id: 6,
@@ -46,6 +51,7 @@ const products = [
       vegetarian: true,
       glutenFree: true,
       price: 2,
+      img: "broccoli.png",
     },
     {
       id: 7,
@@ -54,6 +60,7 @@ const products = [
       vegetarian: true,
       glutenFree: false,
       price: 5,
+      img: "yogurt.png",
     },
     {
       id: 8,
@@ -62,6 +69,7 @@ const products = [
       vegetarian: true,
       glutenFree: false,
       price: 5,
+      img: "milk.png",
     },
     {
       id: 9,
@@ -70,6 +78,7 @@ const products = [
       vegetarian: true,
       glutenFree: true,
       price: 3,
+      img: "almond-milk.png",
     },
     {
       id: 10,
@@ -78,6 +87,7 @@ const products = [
       vegetarian: true,
       glutenFree: true,
       price: 6,
+      img: "strawberry.png",
     },
   ];
   
