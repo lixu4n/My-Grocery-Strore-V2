@@ -44,17 +44,6 @@ font-size: 30px;
   gap: 1rem;
 }
 
-.products-container input {
-  display: none;
-}
-
-.products-container img {
-  width: 4rem;
-  height: 4rem;
-  align-self: center;
-  user-select: none;
-}
-
 .product {
   display: flex;
   flex-direction: column;
@@ -65,6 +54,17 @@ font-size: 30px;
   border-radius: 0.7rem;
   padding: 0.8rem;
   transition: all 100ms ease-in-out;
+}
+
+.product input {
+  display: none;
+}
+
+.product img {
+  width: 4rem;
+  height: 4rem;
+  align-self: center;
+  user-select: none;
 }
 
 .product:has(input[type="checkbox"]:checked) {
