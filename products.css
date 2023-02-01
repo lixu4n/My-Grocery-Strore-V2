@@ -52,6 +52,7 @@ font-size: 30px;
   width: 4rem;
   height: 4rem;
   align-self: center;
+  user-select: none;
 }
 
 .product {
