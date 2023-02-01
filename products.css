@@ -39,9 +39,8 @@ font-size: 30px;
   }
 
 .products-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 1rem;
 }
 
@@ -75,8 +74,7 @@ font-size: 30px;
 .product > div {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
