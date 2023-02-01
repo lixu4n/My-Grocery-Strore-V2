@@ -87,8 +87,11 @@ const renderProducts = (products) => {
     const productLabel = document.createElement("label");
     productLabel.classList.add("product");
     productLabel.innerHTML = `
+            <img src="images/${product.img}" alt="${product.name}" />
+            <div>
             <span class="product-name">${product.name}</span>
             <span class="product-price">$${product.price}</span>
+            </div>
         `;
 
     productLabel.prepend(productCheckbox);
