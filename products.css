@@ -72,6 +72,10 @@ font-size: 30px;
   color: white;
 }
 
+.product:hover {
+  border-color: #00000083;
+}
+
 .product > div {
   display: flex;
   flex-direction: row;
