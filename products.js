@@ -1,5 +1,6 @@
 const products = [
     {
+      id: 1,
       name: "Chicken",
       organic: false,
       vegetarian: false,
@@ -7,6 +8,7 @@ const products = [
       price: 8,
     },
     {
+      id: 2,
       name: "Salmon",
       organic: false,
       vegetarian: false,
@@ -14,6 +16,7 @@ const products = [
       price: 12,
     },
     {
+      id: 3,
       name: "Rice",
       organic: false,
       vegetarian: true,
@@ -21,6 +24,7 @@ const products = [
       price: 3,
     },
     {
+      id: 4,
       name: "Bread",
       organic: false,
       vegetarian: true,
@@ -28,6 +32,7 @@ const products = [
       price: 5,
     },
     {
+      id: 5,
       name: "Tofu",
       organic: false,
       vegetarian: true,
@@ -35,6 +40,7 @@ const products = [
       price: 2,
     },
     {
+      id: 6,
       name: "Broccoli",
       organic: true,
       vegetarian: true,
@@ -42,6 +48,7 @@ const products = [
       price: 2,
     },
     {
+      id: 7,
       name: "Yogurt",
       organic: false,
       vegetarian: true,
@@ -49,6 +56,7 @@ const products = [
       price: 5,
     },
     {
+      id: 8,
       name: "Milk",
       organic: false,
       vegetarian: true,
@@ -56,6 +64,7 @@ const products = [
       price: 5,
     },
     {
+      id: 9,
       name: "Almond Milk",
       organic: true,
       vegetarian: true,
@@ -63,6 +72,7 @@ const products = [
       price: 3,
     },
     {
+      id: 10,
       name: "Strawberries",
       organic: true,
       vegetarian: true,
