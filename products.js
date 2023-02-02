@@ -100,6 +100,14 @@ const products = [
       category: "fruits",
     },
   ];
+
+// keep state of filters and current category
+const state = {
+  vegetarian: false,
+  glutenFree: false,
+  organic: 'all',
+  category: 'all',
+};
   
   /**
    * List of available filters
@@ -138,4 +146,43 @@ const products = [
         return true;
       })
     );
-  
+
+const getFilteredProducts = () => {
+
+  const vegetarianOnly = state.vegetarian || false;
+  const glutenFreeOnly = state.glutenFree || false;
+  const organic = state.organic || 'all';
+  const category = state.category || 'all';
+
+  const filteredProducts = products.filter((product) => {
+    if (vegetarianOnly && !product.vegetarian) {
+      return false;
+    }
+    if (glutenFreeOnly && !product.glutenFree) {
+      return false;
+    }
+    if (organic !== 'all' && organic !== (product.organic ? 'organic' : 'nonOrganic')) {
+      return false;
+    }
+    if (category !== 'all' && category !== product.category) {
+      return false;
+    }
+    return true;
+  });
+
+  return filteredProducts;
+
+}
+
+const selectFoodCategory = (event) => {
+  const category = event.target.value;
+  state.category = category;
+  const categoryButtons = document.querySelectorAll(".products-categories button");
+  categoryButtons.forEach((button) => {
+    button.classList.remove("selected");
+  }
+  );
+  event.target.classList.add("selected");
+  const filteredProducts = getFilteredProducts();
+  renderProducts(filteredProducts);
+}
