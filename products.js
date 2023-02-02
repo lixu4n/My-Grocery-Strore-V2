@@ -7,6 +7,7 @@ const products = [
       glutenFree: false,
       price: 8,
       img: "chicken-leg.png",
+      category: "meat",
     },
     {
       id: 2,
@@ -16,6 +17,7 @@ const products = [
       glutenFree: false,
       price: 12,
       img: "salmon.png",
+      category: "meat",
     },
     {
       id: 3,
@@ -25,6 +27,7 @@ const products = [
       glutenFree: false,
       price: 3,
       img: "rice.png",
+      category: "grains",
     },
     {
       id: 4,
@@ -34,6 +37,7 @@ const products = [
       glutenFree: true,
       price: 5,
       img: "bread.png",
+      category: "grains",
     },
     {
       id: 5,
@@ -43,6 +47,7 @@ const products = [
       glutenFree: true,
       price: 2,
       img: "tofu.png",
+      category: "meat",
     },
     {
       id: 6,
@@ -52,6 +57,7 @@ const products = [
       glutenFree: true,
       price: 2,
       img: "broccoli.png",
+      category: "vegetables",
     },
     {
       id: 7,
@@ -61,6 +67,7 @@ const products = [
       glutenFree: false,
       price: 5,
       img: "yogurt.png",
+      category: "dairy",
     },
     {
       id: 8,
@@ -70,6 +77,7 @@ const products = [
       glutenFree: false,
       price: 5,
       img: "milk.png",
+      category: "dairy",
     },
     {
       id: 9,
@@ -79,6 +87,7 @@ const products = [
       glutenFree: true,
       price: 3,
       img: "almond-milk.png",
+      category: "dairy",
     },
     {
       id: 10,
@@ -88,6 +97,7 @@ const products = [
       glutenFree: true,
       price: 6,
       img: "strawberry.png",
+      category: "fruits",
     },
   ];
   
