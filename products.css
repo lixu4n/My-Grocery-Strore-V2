@@ -40,12 +40,19 @@ font-size: 30px;
 
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 12rem);
+  grid-template-columns: repeat(auto-fit, 10rem);
   grid-auto-rows: 1fr;
   justify-content: center;
-  grid-gap: 1rem;
+  grid-gap: 0.6rem;
   width: 100%;
-  padding: 1rem;
+  padding: 0.1rem;
+}
+@media (min-width: 640px) {
+  .products-container {
+    grid-template-columns: repeat(auto-fit, 12rem);
+    grid-gap: 1rem;
+    padding: 1rem;
+  }
 }
 
 .product {
@@ -66,10 +73,15 @@ font-size: 30px;
 .product img {
   width: 4rem;
   height: 4rem;
-  padding: 1rem;
+  padding: 0.4rem;
   box-sizing: content-box;
   align-self: center;
   user-select: none;
+}
+@media (min-width: 640px) {
+  .product img {
+    padding: 1rem;
+  }
 }
 
 .product:has(input[type="checkbox"]:checked) {
