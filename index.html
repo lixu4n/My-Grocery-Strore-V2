@@ -19,7 +19,7 @@
         <!--add website link-->
         <a href="#" class="logo">YUMS!</a>
         <ul class="tab-group">
-          <li class="tab tab-A is-active"><a>Home</a></li>
+          <li class="tab tab-A is-active tab-active"><a>Home</a></li>
           <li class="tab tab-B"><a>Account</a></li>
           <li class="tab tab-C"><a>Products</a></li>
           <li class="tab tab-D"><a>Cart</a></li>
@@ -29,10 +29,6 @@
 
     <!--Add Content here-->
     <div class="panel-group">
-      <!--
-         Home Tab
-            
-       -->
       <div class="panel tab-A is-show">
         <h4>Welcome to YUMS!</h4>
         <br />
@@ -44,6 +40,10 @@
           people. Please go ahead to the Account tab to enter your restrictions.
           We will provide you with an amazing personalized shopping experience!
         </p>
+        <br />
+        <div class="button-center">
+          <button onclick="NextPage(1)">Start Shopping</button>
+        </div>
       </div>
       <!--
               Account tabs
@@ -106,12 +106,10 @@
               <label for="nonOrganic">Non organic</label>
             </td>
           </tr>
-          <tr>
-            <td>
-              <button onclick="getRequirements()">Confirm Restrictions</button>
-            </td>
-          </tr>
         </table>
+        <div class="button-center">
+          <button onclick="getRequirements()">Confirm Restrictions</button>
+        </div>
       </div>
 
       <div class="panel tab-C">
@@ -121,11 +119,15 @@
         <br />
         <p>Choose items to buy.</p>
         <br />
-
         <div class="products-container"></div>
         <br />
-        <div>
-          <button onclick="renderCart()">Add Items</button>
+        <div class="button-center">
+          <button onclick="renderCart()" style="margin-right: 20px">
+            Add Items
+          </button>
+          <button onclick="NextPage(3)" class="button-hidden" id="cart-button">
+            Go to Cart
+          </button>
         </div>
       </div>
       <div class="panel tab-D">
@@ -134,6 +136,10 @@
         <br />
         <p>Your total is :</p>
         <div id="displayCart"></div>
+        <div class="button-center">
+          <button id="order-button" class="button-hidden">Place Order</button>
+        </div>
+
         <br />
         <br />
         <p>Thank You for shopping at YUMS!</p>
