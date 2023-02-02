@@ -86,7 +86,7 @@ font-size: 30px;
 
 .product:has(input[type="checkbox"]:checked) {
   background-color: #75975e;
-  color: white;
+  color: #fffafa;
 }
 
 @media (hover: hover) {
