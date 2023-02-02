@@ -1,42 +1,38 @@
 .panel-group h3 {
   font-size: 30px;
-
 }
 
 .panel-group h4 {
-font-size: 30px;
-
+  font-size: 30px;
 }
-  
-  .panel-group {
-    font-size: larger;
-    text-align: justify;
 
-  }
+.panel-group {
+  font-size: larger;
+  text-align: justify;
+}
 
-  .panel-group h2 {
-    font-size: 40px;
-    
+.panel-group h2 {
+  font-size: 40px;
+}
+.panel-group button {
+  background-color: hsl(96, 23%, 48%);
+  color: wheat;
+  border-radius: 1ch;
+  padding: 6px;
+  cursor: pointer;
+  border: 3px solid #00000053;
+  font-size: large;
+  /* margin-top: 20%; */
+}
 
-  }
-  .panel-group button {
-    margin-top: 10px;
-    background-color: hsl(96, 23%, 48%);
-    color: wheat;
-    border-radius: 1ch;
-    padding: 6px;
-    cursor: pointer;
-    border: 3px solid #00000053;
-  }
-  
-  .panel-group button:hover {
-    background-color: wheat;
-    color: #75975e;
-  }
-  
-  .panel-group button:active {
-    transform: translateY(2px);
-  }
+.panel-group button:hover {
+  background-color: wheat;
+  color: #75975e;
+}
+
+.panel-group button:active {
+  transform: translateY(2px);
+}
 
 .products-container {
   display: grid;

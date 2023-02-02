@@ -17,7 +17,7 @@ document.addEventListener(
         .classList.remove("is-active");
       this.classList.add("is-active");
       this.classList.add("tab-active"); // add class tab-active
-      
+
       //ACTIVE tab switching
       const allTabs = document.getElementsByClassName("tab");
       for (let i = 0; i < allTabs.length; i++) {
@@ -25,22 +25,14 @@ document.addEventListener(
       }
       this.classList.add("is-active", "tab-active");
 
-
-    
-
       document.getElementsByClassName("is-show")[0].classList.remove("is-show");
       const arrayTabs = Array.prototype.slice.call(tabs);
       const index = arrayTabs.indexOf(this);
       document.getElementsByClassName("panel")[index].classList.add("is-show");
-
-
-
     }
   },
   false
 );
-
-
 
 /**
  * List of products to appear (all products at first)
@@ -51,7 +43,7 @@ const productsToAppear = [...products];
  * @param {{vegetarian: boolean, glutenFree: boolean, organic: boolean, nonOrganic: boolean}} filters
  */
 const filterChangeHandler = (filters) => {
-  const filtersCopy = { ...filters };
+  const filtersCopy = {...filters};
 
   if (filters.nonOrganic && filters.organic) {
     filtersCopy.organic = "all";
@@ -89,7 +81,7 @@ const renderProducts = (products) => {
     productLabel.innerHTML = `
             <img src="images/${product.img}" alt="${product.name}" />
             <div>
-            <span class="product-name">${product.name}</span>
+            <span class="product-name" price="${product.price}">${product.name}</span>
             <span class="product-price">$${product.price}</span>
             </div>
         `;
@@ -112,9 +104,12 @@ const renderCart = () => {
   content.append(document.createElement("br"));
 
   for (const ele of products) {
+    console.log(ele.childNodes[2]);
     var checked = ele.childNodes[0].checked;
     if (checked) {
-      var item = document.createTextNode(ele.childNodes[0].name);
+      var item = document.createTextNode(
+        ele.childNodes[0].name + " $" + ele.childNodes[2].getAttribute("price")
+      );
       console.log("checked: " + ele.childNodes[0].name);
       content.append(item);
       content.append(document.createElement("br"));
@@ -124,8 +119,10 @@ const renderCart = () => {
 
   console.log(productsName);
   var price = getTotalPrice(productsName);
-  content.append(document.createTextNode("The total price is " + price));
+  content.append(document.createTextNode("The total price is $" + price));
   cart.append(content);
+
+  document.getElementById("cart-button").classList.remove("button-hidden");
 };
 
 const getTotalPrice = (productsName) => {
@@ -156,3 +153,12 @@ function toastPop(text) {
     x.className = x.className.replace("show", "");
   }, 2000);
 }
+
+const NextPage = (index) => {
+  const tabs = document.getElementsByClassName("tab");
+  tabs[index].click();
+
+  if (index == 3) {
+    document.getElementById("order-button").classList.remove("button-hidden");
+  }
+};
