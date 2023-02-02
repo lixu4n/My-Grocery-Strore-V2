@@ -95,3 +95,23 @@
   display: flex;
   flex-direction: column;
 }
+
+.products {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+}
+
+.products-categories {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+}
+
+.products-categories button {
+  transition: all 100ms ease-in-out;
+}
+
+.products-categories button.selected {
+  background-color: #4f683e;
+  color: #fffafad8;
+}
