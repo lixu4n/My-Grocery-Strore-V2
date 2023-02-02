@@ -89,8 +89,10 @@ font-size: 30px;
   color: white;
 }
 
-.product:hover {
-  border-color: #00000083;
+@media (hover: hover) {
+  .product:hover {
+    border-color: #00000083;
+  }
 }
 
 .product > div {
