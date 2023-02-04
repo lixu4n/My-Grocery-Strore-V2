@@ -137,6 +137,13 @@
   transition: all 100ms ease-in-out;
 }
 
+@media(hover: hover) {
+  .products-categories button:hover {
+    background-color: #00000010;
+    color: #000000;
+  }
+}
+
 .products-categories button.selected {
   background-color: #4f683e;
   color: #fffafad8;
