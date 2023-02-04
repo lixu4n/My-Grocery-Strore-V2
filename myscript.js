@@ -104,16 +104,19 @@ const renderCart = () => {
   content.append(document.createElement("br"));
 
   for (const ele of products) {
+    let checkboxElement = ele.querySelector("input[type=checkbox]");
+    let productName = ele.querySelector("input[name]").getAttribute("name");
+    let productPrice = ele.querySelector("div > .product-name[price]").getAttribute("price");
     console.log(ele.childNodes[2]);
-    var checked = ele.childNodes[0].checked;
+    var checked = checkboxElement.checked;
     if (checked) {
       var item = document.createTextNode(
-        ele.childNodes[0].name + " $" + ele.childNodes[2].getAttribute("price")
+        productName + " $" + productPrice
       );
-      console.log("checked: " + ele.childNodes[0].name);
+      console.log("checked: " + productName);
       content.append(item);
       content.append(document.createElement("br"));
-      productsName.push(ele.childNodes[0].name);
+      productsName.push(productName);
     }
   }
 
