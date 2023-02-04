@@ -40,6 +40,12 @@ document.addEventListener(
 const productsToAppear = [...products];
 
 /**
+ * List of products in the cart
+ * @type {Array<{id:number}>}
+ */
+var cart = [];
+
+/**
  * @param {{vegetarian: boolean, glutenFree: boolean, organic: boolean, nonOrganic: boolean}} filters
  */
 const filterChangeHandler = (filters) => {
@@ -75,6 +81,15 @@ const renderProducts = (products) => {
     const productCheckbox = document.createElement("input");
     productCheckbox.type = "checkbox";
     productCheckbox.name = product.name;
+    productCheckbox.checked = cart.some((cartProduct) => cartProduct.id === product.id);
+    productCheckbox.addEventListener("change", (e) => {
+      if (e.target.checked) {
+        cart.push({ id: product.id });
+      } else {
+        cart = cart.filter((cartProduct) => cartProduct.id !== product.id);
+      }
+      renderCart();
+    });
 
     const productLabel = document.createElement("label");
     productLabel.classList.add("product");
@@ -94,36 +109,28 @@ const renderProducts = (products) => {
 const renderCart = () => {
   toastPop("Products added to cart");
 
-  var products = document.getElementsByClassName("product");
   var productsName = [];
-  var cart = document.getElementById("displayCart");
-  cart.innerHTML = "";
+  var cartContainerElement = document.getElementById("displayCart");
+  cartContainerElement.innerHTML = "";
   var content = document.createElement("P");
 
   content.innerHTML = "You have selected: ";
   content.append(document.createElement("br"));
 
-  for (const ele of products) {
-    let checkboxElement = ele.querySelector("input[type=checkbox]");
-    let productName = ele.querySelector("input[name]").getAttribute("name");
-    let productPrice = ele.querySelector("div > .product-name[price]").getAttribute("price");
-    console.log(ele.childNodes[2]);
-    var checked = checkboxElement.checked;
-    if (checked) {
-      var item = document.createTextNode(
-        productName + " $" + productPrice
-      );
-      console.log("checked: " + productName);
-      content.append(item);
-      content.append(document.createElement("br"));
-      productsName.push(productName);
-    }
+  for (const ele of cart) {
+    let productName = products.find((product) => product.id === ele.id).name;
+    let productPrice = products.find((product) => product.id === ele.id).price;
+    var item = document.createTextNode(
+      productName + " $" + productPrice
+    );
+    content.append(item);
+    content.append(document.createElement("br"));
+    productsName.push(productName);
   }
 
-  console.log(productsName);
   var price = getTotalPrice(productsName);
   content.append(document.createTextNode("The total price is $" + price));
-  cart.append(content);
+  cartContainerElement.append(content);
 
   document.getElementById("cart-button").classList.remove("button-hidden");
 };
