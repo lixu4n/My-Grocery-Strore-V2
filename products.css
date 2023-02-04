@@ -41,6 +41,7 @@
   justify-content: center;
   grid-gap: 0.6rem;
   width: 100%;
+  height: min-content;
   padding: 0.1rem;
 }
 @media (min-width: 640px) {
