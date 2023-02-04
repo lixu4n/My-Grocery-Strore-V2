@@ -129,6 +129,11 @@
 }
 
 .products-categories button {
+  border: 0;
+  background: none;
+  color: #000000;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
   transition: all 100ms ease-in-out;
 }
 
