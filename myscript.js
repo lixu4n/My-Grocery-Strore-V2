@@ -86,7 +86,7 @@ const renderProducts = (products) => {
             </div>
         `;
 
-        // if browser doesn't support :has() pseudo-class, use this
+    // if browser doesn't support :has() pseudo-class, use this
     if (!CSS.supports("(:has())")) {
       productCheckbox.addEventListener("change", () => {
         productLabel.setAttribute("data-checked", productCheckbox.checked);
