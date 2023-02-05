@@ -46,28 +46,11 @@ const productsToAppear = [...products];
 var cart = [];
 
 /**
- * @param {{vegetarian: boolean, glutenFree: boolean, organic: boolean, nonOrganic: boolean}} filters
+ * @param {{vegetarian: boolean, glutenFree: boolean}} filters
  */
 const filterChangeHandler = (filters) => {
-  const filtersCopy = {...filters};
-
-  if (filters.nonOrganic && filters.organic) {
-    filtersCopy.organic = "all";
-    delete filtersCopy.nonOrganic;
-  } else if (filters.nonOrganic) {
-    filtersCopy.organic = "nonOrganic";
-    delete filtersCopy.nonOrganic;
-  } else if (filters.organic) {
-    filtersCopy.organic = "organic";
-    delete filtersCopy.nonOrganic;
-  } else {
-    filtersCopy.organic = "all";
-    delete filtersCopy.nonOrganic;
-  }
-
-  state.organic = filtersCopy.organic;
-  state.vegetarian = filtersCopy.vegetarian;
-  state.glutenFree = filtersCopy.glutenFree;
+  state.vegetarian = filters.vegetarian;
+  state.glutenFree = filters.glutenFree;
 
   updateProducts();
 };
