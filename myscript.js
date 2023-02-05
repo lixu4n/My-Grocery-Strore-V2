@@ -2,7 +2,6 @@
  *Changing tabs
  *
  */
-
 document.addEventListener(
   "DOMContentLoaded",
   function () {
@@ -21,24 +20,20 @@ document.addEventListener(
       //ACTIVE tab switching
       const allTabs = document.getElementsByClassName("tab");
       for (let i = 0; i < allTabs.length; i++) {
+        
         allTabs[i].classList.remove("is-active", "tab-active");
       }
       this.classList.add("is-active", "tab-active");
-
-
-    
 
       document.getElementsByClassName("is-show")[0].classList.remove("is-show");
       const arrayTabs = Array.prototype.slice.call(tabs);
       const index = arrayTabs.indexOf(this);
       document.getElementsByClassName("panel")[index].classList.add("is-show");
-
-
-
     }
   },
   false
 );
+
 
 
 
@@ -153,3 +148,4 @@ function toastPop(text) {
     x.className = x.className.replace("show", "");
   }, 2000);
 }
+

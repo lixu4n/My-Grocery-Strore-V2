@@ -7,7 +7,7 @@
 }
 body {
   min-height: 100vh;
-  background-color: #75975e;
+  background-color: #75965e;
   display: flex;
   flex-direction: column;
 }
@@ -51,7 +51,7 @@ header .logo {
 }
 
 .tab-active {
-  background-color: #c7ddb5;
+  background-color: #4b6043;
   }
 
   

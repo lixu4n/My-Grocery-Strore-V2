@@ -70,7 +70,6 @@ const products = [
       price: 6,
     },
   ];
-  
   /**
    * List of available filters
    */
