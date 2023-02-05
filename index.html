@@ -143,9 +143,9 @@
             <div class="name">Filter</div>
             <div class="transparent-container">
               <label for="vegetarian1">Vegetarian</label>
-              <input type="checkbox" id="vegetarian1" name="vegetarian" class="requirement" />
+              <input type="checkbox" id="vegetarian1" name="vegetarian" class="requirement1" onchange="getRequirements()" />
               <label for="glutenFree1">Gluten Free</label>
-              <input type="checkbox" id="glutenFree1" name="glutenFree" class="requirement" />
+              <input type="checkbox" id="glutenFree1" name="glutenFree" class="requirement1" onchange="getRequirements()" />
               <select id="organic1" name="organic" class="requirement" onchange="selectOrganic(event)">
                 <option value="all">Organic & Non Organic</option>
                 <option value="organic">Organic</option>

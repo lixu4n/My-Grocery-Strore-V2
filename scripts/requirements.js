@@ -6,7 +6,7 @@ var requirements = {
 };
 
 const getRequirements = () => {
-  var data = document.getElementsByClassName("requirements");
+  var data = document.getElementsByClassName("requirement1");
   for (const element of data) {
     var name = element.name;
     requirements[name] = element.checked;
