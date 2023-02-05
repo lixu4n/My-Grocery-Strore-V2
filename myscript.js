@@ -16,7 +16,7 @@ document.addEventListener(
         .classList.remove("is-active");
       this.classList.add("is-active");
       this.classList.add("tab-active"); // add class tab-active
-      
+
       //ACTIVE tab switching
       const allTabs = document.getElementsByClassName("tab");
       for (let i = 0; i < allTabs.length; i++) {
@@ -34,19 +34,22 @@ document.addEventListener(
   false
 );
 
-
-
-
 /**
  * List of products to appear (all products at first)
  */
 const productsToAppear = [...products];
 
 /**
+ * List of products in the cart
+ * @type {Array<{id:number}>}
+ */
+var cart = [];
+
+/**
  * @param {{vegetarian: boolean, glutenFree: boolean, organic: boolean, nonOrganic: boolean}} filters
  */
 const filterChangeHandler = (filters) => {
-  const filtersCopy = { ...filters };
+  const filtersCopy = {...filters};
 
   if (filters.nonOrganic && filters.organic) {
     filtersCopy.organic = "all";
@@ -62,7 +65,11 @@ const filterChangeHandler = (filters) => {
     delete filtersCopy.nonOrganic;
   }
 
-  const filteredProducts = filterProducts(filtersCopy);
+  state.organic = filtersCopy.organic;
+  state.vegetarian = filtersCopy.vegetarian;
+  state.glutenFree = filtersCopy.glutenFree;
+
+  const filteredProducts = getFilteredProducts();
   filteredProducts.sort((a, b) => a.price - b.price);
   renderProducts(filteredProducts);
 };
@@ -78,13 +85,32 @@ const renderProducts = (products) => {
     const productCheckbox = document.createElement("input");
     productCheckbox.type = "checkbox";
     productCheckbox.name = product.name;
+    productCheckbox.checked = cart.some((cartProduct) => cartProduct.id === product.id);
+    productCheckbox.addEventListener("change", (e) => {
+      if (e.target.checked) {
+        cart.push({ id: product.id });
+      } else {
+        cart = cart.filter((cartProduct) => cartProduct.id !== product.id);
+      }
+      renderCart();
+    });
 
     const productLabel = document.createElement("label");
     productLabel.classList.add("product");
     productLabel.innerHTML = `
-            <span class="product-name">${product.name}</span>
+            <img src="images/${product.img}" alt="${product.name}" />
+            <div>
+            <span class="product-name" price="${product.price}">${product.name}</span>
             <span class="product-price">$${product.price}</span>
+            </div>
         `;
+
+    // if browser doesn't support :has() pseudo-class, use this
+    if (!CSS.supports("(:has())")) {
+      productCheckbox.addEventListener("change", () => {
+        productLabel.setAttribute("data-checked", productCheckbox.checked);
+      });
+    }
 
     productLabel.prepend(productCheckbox);
     productsContainer.appendChild(productLabel);
@@ -94,30 +120,30 @@ const renderProducts = (products) => {
 const renderCart = () => {
   toastPop("Products added to cart");
 
-  var products = document.getElementsByClassName("product");
   var productsName = [];
-  var cart = document.getElementById("displayCart");
-  cart.innerHTML = "";
+  var cartContainerElement = document.getElementById("displayCart");
+  cartContainerElement.innerHTML = "";
   var content = document.createElement("P");
 
   content.innerHTML = "You have selected: ";
   content.append(document.createElement("br"));
 
-  for (const ele of products) {
-    var checked = ele.childNodes[0].checked;
-    if (checked) {
-      var item = document.createTextNode(ele.childNodes[0].name);
-      console.log("checked: " + ele.childNodes[0].name);
-      content.append(item);
-      content.append(document.createElement("br"));
-      productsName.push(ele.childNodes[0].name);
-    }
+  for (const ele of cart) {
+    let productName = products.find((product) => product.id === ele.id).name;
+    let productPrice = products.find((product) => product.id === ele.id).price;
+    var item = document.createTextNode(
+      productName + " $" + productPrice
+    );
+    content.append(item);
+    content.append(document.createElement("br"));
+    productsName.push(productName);
   }
 
-  console.log(productsName);
   var price = getTotalPrice(productsName);
-  content.append(document.createTextNode("The total price is " + price));
-  cart.append(content);
+  content.append(document.createTextNode("The total price is $" + price));
+  cartContainerElement.append(content);
+
+  document.getElementById("cart-button").classList.remove("button-hidden");
 };
 
 const getTotalPrice = (productsName) => {
@@ -149,3 +175,11 @@ function toastPop(text) {
   }, 2000);
 }
 
+const NextPage = (index) => {
+  const tabs = document.getElementsByClassName("tab");
+  tabs[index].click();
+
+  if (index == 3) {
+    document.getElementById("order-button").classList.remove("button-hidden");
+  }
+};

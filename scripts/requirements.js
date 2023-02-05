@@ -14,4 +14,5 @@ const getRequirements = () => {
   filterChangeHandler(requirements);
 
   toastPop("Requirements confirmed");
+  NextPage(2);
 };

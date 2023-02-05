@@ -1,45 +1,117 @@
 .panel-group h3 {
   font-size: 30px;
-
 }
 
 .panel-group h4 {
-font-size: 30px;
-
+  font-size: 30px;
 }
-  
-  .panel-group {
-    font-size: larger;
-    text-align: justify;
 
-  }
+.panel-group {
+  font-size: larger;
+  text-align: justify;
+}
 
-  .panel-group h2 {
-    font-size: 40px;
-    
+.panel-group h2 {
+  font-size: 40px;
+}
+.panel-group button {
+  background-color: hsl(96, 23%, 48%);
+  color: wheat;
+  border-radius: 1ch;
+  padding: 6px;
+  cursor: pointer;
+  border: 3px solid #00000053;
+  font-size: large;
+  /* margin-top: 20%; */
+}
 
-  }
-  .panel-group button {
-    margin-top: 10px;
-    background-color: hsl(96, 23%, 48%);
-    color: wheat;
-    border-radius: 1ch;
-    padding: 6px;
-    cursor: pointer;
-    border: 3px solid #00000053;
-  }
-  
-  .panel-group button:hover {
-    background-color: wheat;
-    color: #75975e;
-  }
-  
-  .panel-group button:active {
-    transform: translateY(2px);
-  }
+.panel-group button:hover {
+  background-color: wheat;
+  color: #75975e;
+}
+
+.panel-group button:active {
+  transform: translateY(2px);
+}
 
 .products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 0.6rem;
+  width: 100%;
+  height: min-content;
+  min-height: 4rem;
+  padding: 0.1rem;
+}
+
+.product {
   display: flex;
   flex-direction: column;
-  padding-left: 2rem;
+  align-items: space-between;
+  justify-content: center;
+  border: 0.4rem solid #00000053;
+  border-radius: 0.7rem;
+  padding: 0.8rem;
+  transition: all 100ms ease-in-out;
+}
+
+.product input {
+  display: none;
+}
+
+.product img {
+  width: 4rem;
+  height: 4rem;
+  padding: 0.4rem;
+  box-sizing: content-box;
+  align-self: center;
+  user-select: none;
+}
+@media (min-width: 640px) {
+  .product img {
+    padding: 1rem;
+  }
+}
+
+/* for compatibility */
+.product[data-checked="true"] {
+  background-color: #75975e;
+  color: #fffafa;
+}
+.product:has(input[type="checkbox"]:checked) {
+  background-color: #75975e;
+  color: #fffafa;
+}
+
+@media (hover: hover) {
+  .product:hover {
+    border-color: #00000083;
+  }
+}
+
+.product > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+}
+
+.products-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 2rem;
+}
+
+.products-categories button {
+  transition: all 100ms ease-in-out;
+}
+
+.products-categories button.selected {
+  background-color: #4f683e;
+  color: #fffafad8;
 }

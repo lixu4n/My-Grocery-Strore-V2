@@ -10,6 +10,7 @@ body {
   background-color: #75965e;
   display: flex;
   flex-direction: column;
+  /* padding: 0 20%; */
 }
 header {
   width: 100%;
@@ -54,16 +55,18 @@ header .logo {
   background-color: #4b6043;
   }
 
-  
 .panel-group {
   border: solid 1px #75975e;
   border-top: none;
   border-radius: none;
   background: #c7ddb5;
-  padding-top: 6rem;
+
   padding-bottom: 6rem;
   width: 100%;
   flex-grow: 1;
+  padding: 0 20%;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 .signature {
   text-align: center;
@@ -139,4 +142,17 @@ header .logo {
   visibility: visible;
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.button-center {
+  text-align: center;
+  padding-top: 10ch;
+}
+
+#displayCart {
+  padding-left: 40%;
+}
+
+.button-hidden {
+  visibility: hidden;
 }
