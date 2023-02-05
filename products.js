@@ -181,6 +181,12 @@ const getFilteredProducts = () => {
 
 }
 
+const updateProducts = () => {
+  const filteredProducts = getFilteredProducts();
+  filteredProducts.sort((a, b) => a.price - b.price);
+  renderProducts(filteredProducts);
+}
+
 const selectFoodCategory = (event) => {
   const category = event.target.value;
   state.category = category;
@@ -190,14 +196,12 @@ const selectFoodCategory = (event) => {
   }
   );
   event.target.classList.add("selected");
-  const filteredProducts = getFilteredProducts();
-  renderProducts(filteredProducts);
+  updateProducts();
 }
 
 const selectOrganic = (event) => {
   console.log("here")
   state.organic = event.target.value;
   event.target.setAttribute("data-value", event.target.value);
-  const filteredProducts = getFilteredProducts();
-  renderProducts(filteredProducts);
+  updateProducts();
 }

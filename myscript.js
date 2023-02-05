@@ -69,9 +69,7 @@ const filterChangeHandler = (filters) => {
   state.vegetarian = filtersCopy.vegetarian;
   state.glutenFree = filtersCopy.glutenFree;
 
-  const filteredProducts = getFilteredProducts();
-  filteredProducts.sort((a, b) => a.price - b.price);
-  renderProducts(filteredProducts);
+  updateProducts();
 };
 
 /**
