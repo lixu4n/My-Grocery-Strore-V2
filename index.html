@@ -64,6 +64,13 @@
         <div class="products">
           <div class="left-tabs">
             <div class="name">Categories</div>
+            <div class="search-container">
+              <form action="#" method="post">
+                <input type="text" placeholder="Search..." name="search-input">
+                <button type="submit">Go</button>
+              </form>
+              <div id="search-results"></div>
+            </div>
             <div class="products-categories transparent-container">
               <button class="selected" onclick="selectFoodCategory(event)" value="all">All</button>
               <button onclick="selectFoodCategory(event)" value="fruits">Fruits</button>
@@ -109,6 +116,10 @@
         <br />
         <p>Thank You for shopping at YUMS!</p>
         <!--return to home page--><button onclick="href:">Shop More</button>
+        <br>
+        
+        <p>Forgot something? You are always welcomed back, here at YUMS!</p>
+
       </div>
     </div>
     <div>

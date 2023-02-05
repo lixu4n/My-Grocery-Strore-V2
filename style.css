@@ -10,7 +10,6 @@ body {
   background-color: #75965e;
   display: flex;
   flex-direction: column;
-  /* padding: 0 20%; */
 }
 header {
   width: 100%;
@@ -55,18 +54,16 @@ header .logo {
   background-color: #4b6043;
   }
 
+  
 .panel-group {
   border: solid 1px #75975e;
   border-top: none;
   border-radius: none;
   background: #c7ddb5;
-
+  padding-top: 6rem;
   padding-bottom: 6rem;
   width: 100%;
   flex-grow: 1;
-  padding: 0 20%;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
 }
 .signature {
   text-align: center;
@@ -143,16 +140,23 @@ header .logo {
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
-
-.button-center {
-  text-align: center;
-  padding-top: 10ch;
+.search-container input[type="text"] {
+  border-radius: 25px;
+  padding: 5px;
+  width: 130px;
+  height: 40px;
+  font-size: 14px;
 }
 
-#displayCart {
-  padding-left: 40%;
-}
+.search-container button[type="submit"] {
+  background-color: #75965e;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
 
-.button-hidden {
-  visibility: hidden;
+}
+.product p {
+  font-size: 13px;
 }

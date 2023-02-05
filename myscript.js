@@ -62,19 +62,41 @@ const filterChangeHandler = (filters) => {
 const renderProducts = (products) => {
   const productsContainer = document.querySelector(".products-container");
   productsContainer.innerHTML = "";
-  products.forEach((product) => {
-    const productCheckbox = document.createElement("input");
-    productCheckbox.type = "checkbox";
-    productCheckbox.name = product.name;
-    productCheckbox.checked = cart.some((cartProduct) => cartProduct.id === product.id);
-    productCheckbox.addEventListener("change", (e) => {
-      if (e.target.checked) {
-        cart.push({ id: product.id });
-      } else {
-        cart = cart.filter((cartProduct) => cartProduct.id !== product.id);
+  const searchInput = document.querySelector("[name='search-input']");
+  const searchResults = document.querySelector("#search-results");
+ 
+ 
+  searchInput.addEventListener("input", (e) => {
+    e.stopPropagation();
+    const searchTerm = e.target.value.toLowerCase();
+    searchResults.innerHTML = "";
+
+
+    products.forEach((product) => {
+      if (!product.name.toLowerCase().includes(searchTerm)) {
+        return;
       }
-      renderCart();
+      const productCheckbox = document.createElement("input");
+      productCheckbox.type = "checkbox";
+      productCheckbox.name = product.name;
+      productCheckbox.checked = cart.some((cartProduct) => cartProduct.id === product.id);
+      productCheckbox.addEventListener("change", (e) => {
+        if (e.target.checked) {
+          cart.push({ id: product.id });
+        } else {
+          cart = cart.filter((cartProduct) => cartProduct.id !== product.id);
+        }
+        renderCart();
+      });
+
+
+      //label elem.... 
+      const productLabel = document.createElement("label");
+      productLabel.innerHTML = product.name;
+      searchResults.appendChild(productCheckbox);
+      searchResults.appendChild(productLabel);
     });
+
 
     const productLabel = document.createElement("label");
     productLabel.classList.add("product");
