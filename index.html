@@ -22,7 +22,6 @@
         <a href="#" class="logo"><img src="img_read_me/yumslogo.png" width="250" height="65"></a>
         <ul class="tab-group">
           <li class="tab tab-A is-active tab-active"><a>Home</a></li>
-          <li class="tab tab-B"><a>Account</a></li>
           <li class="tab tab-C"><a>Products</a></li>
           <li class="tab tab-D"><a>Cart</a></li>
         </ul>
@@ -51,72 +50,6 @@
         <br />
         <div class="button-center">
           <button onclick="NextPage(1)">Start Shopping</button>
-        </div>
-      </div>
-      <!--
-              Account tabs
-              Account tab
-            
-            -->
-      <div class="panel tab-B">
-        <h1>Welcome to your YUMS! account.</h1>
-        <br />
-        <p>Tell us a more about you.</p>
-        <br />
-        <p>Choose your restrictions:</p>
-        <br />
-        <table>
-          <tr>
-            <td>
-              <input
-                type="checkbox"
-                id="vegetarian"
-                name="vegetarian"
-                class="requirements"
-              />
-            </td>
-            <td>
-              <label for="vegetarian"> Vegetarian</label>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                type="checkbox"
-                id="glutenFree"
-                name="glutenFree"
-                class="requirements"
-              />
-            </td>
-            <td><label for="glutenFree"> Gluten Free</label></td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                type="checkbox"
-                id="organic"
-                name="organic"
-                class="requirements"
-              />
-            </td>
-            <td><label for="organic">Organic</label></td>
-          </tr>
-          <tr>
-            <td>
-              <input
-                type="checkbox"
-                id="nonOrganic"
-                name="nonOrganic"
-                class="requirements"
-              />
-            </td>
-            <td>
-              <label for="nonOrganic">Non organic</label>
-            </td>
-          </tr>
-        </table>
-        <div class="button-center">
-          <button onclick="getRequirements()">Confirm Restrictions</button>
         </div>
       </div>
 
@@ -160,7 +93,7 @@
           <button onclick="renderCart()" style="margin-right: 20px">
             Add Items
           </button>
-          <button onclick="NextPage(3)" class="button-hidden" id="cart-button">
+          <button onclick="NextPage(2)" class="button-hidden" id="cart-button">
             Go to Cart
           </button>
         </div>
