@@ -186,3 +186,11 @@ const selectFoodCategory = (event) => {
   const filteredProducts = getFilteredProducts();
   renderProducts(filteredProducts);
 }
+
+const selectOrganic = (event) => {
+  console.log("here")
+  state.organic = event.target.value;
+  event.target.setAttribute("data-value", event.target.value);
+  const filteredProducts = getFilteredProducts();
+  renderProducts(filteredProducts);
+}
