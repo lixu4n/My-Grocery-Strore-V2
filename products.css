@@ -156,3 +156,29 @@
   background-color: #4f683e;
   color: #fffafad8;
 }
+
+.products .left-tabs .transparent-container select {
+  border: 0;
+  background: none;
+  color: #000000;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  text-align: start;
+  border-radius: 1ch;
+  transition: all 100ms ease-in-out;
+  font-size: 1em;
+}
+
+@media(hover: hover) {
+  .products .left-tabs .transparent-container select:hover {
+    background-color: #00000010;
+    color: #000000;
+  }
+}
+
+.products .left-tabs .transparent-container select[data-value]:not([data-value="all"]) {
+  background-color: #4f683e;
+  color: #fffafad8;
+}
