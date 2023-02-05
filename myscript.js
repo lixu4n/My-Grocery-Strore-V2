@@ -2,7 +2,6 @@
  *Changing tabs
  *
  */
-
 document.addEventListener(
   "DOMContentLoaded",
   function () {
@@ -21,6 +20,7 @@ document.addEventListener(
       //ACTIVE tab switching
       const allTabs = document.getElementsByClassName("tab");
       for (let i = 0; i < allTabs.length; i++) {
+        
         allTabs[i].classList.remove("is-active", "tab-active");
       }
       this.classList.add("is-active", "tab-active");
