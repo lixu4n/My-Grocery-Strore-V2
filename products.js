@@ -101,7 +101,10 @@ const products = [
     },
   ];
 
-// keep state of filters and current category
+/**
+ * Current state of the filters
+ * @type {{vegetarian: boolean, glutenFree: boolean, organic: 'all'|'organic'|'nonOrganic', category: 'all'|'meat'|'grains'|'vegetables'|'dairy'|'fruits'}}
+ */
 const state = {
   vegetarian: false,
   glutenFree: false,
@@ -147,6 +150,10 @@ const state = {
       })
     );
 
+/**
+ * Returns the filtered products based on the current state
+ * @returns {Array<Product>}
+ */
 const getFilteredProducts = () => {
 
   const vegetarianOnly = state.vegetarian || false;
