@@ -59,7 +59,11 @@ const filterChangeHandler = (filters) => {
     delete filtersCopy.nonOrganic;
   }
 
-  const filteredProducts = filterProducts(filtersCopy);
+  state.organic = filtersCopy.organic;
+  state.vegetarian = filtersCopy.vegetarian;
+  state.glutenFree = filtersCopy.glutenFree;
+
+  const filteredProducts = getFilteredProducts();
   filteredProducts.sort((a, b) => a.price - b.price);
   renderProducts(filteredProducts);
 };

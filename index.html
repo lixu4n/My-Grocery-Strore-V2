@@ -119,7 +119,19 @@
         <br />
         <p>Choose items to buy.</p>
         <br />
-        <div class="products-container"></div>
+
+        <div class="products">
+          <div class="products-categories">
+            <button class="selected" onclick="selectFoodCategory(event)" value="all">All</button>
+            <button onclick="selectFoodCategory(event)" value="fruits">Fruits</button>
+            <button onclick="selectFoodCategory(event)" value="vegetables">Vegetables</button>
+            <button onclick="selectFoodCategory(event)" value="meat">Meat</button>
+            <button onclick="selectFoodCategory(event)" value="dairy">Dairy</button>
+            <button onclick="selectFoodCategory(event)" value="bakery">Bakery</button>
+            <button onclick="selectFoodCategory(event)" value="grains">Grains</button>
+          </div>
+          <div class="products-container"></div>
+        </div>
         <br />
         <div class="button-center">
           <button onclick="renderCart()" style="margin-right: 20px">
