@@ -120,7 +120,7 @@
   font-weight: 600;
 }
 
-.products-categories {
+.products .left-tabs .transparent-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -128,23 +128,57 @@
   height: min-content;
 }
 
-.products-categories button {
+.products .left-tabs .transparent-container input[type="checkbox"] {
+  display: none;
+}
+
+.products .left-tabs .transparent-container button, .products .left-tabs .transparent-container label {
   border: 0;
   background: none;
   color: #000000;
+  padding-top: 6px;
+  padding-bottom: 6px;
   padding-left: 0.8rem;
   padding-right: 0.8rem;
+  text-align: start;
+  border-radius: 1ch;
   transition: all 100ms ease-in-out;
 }
 
 @media(hover: hover) {
-  .products-categories button:hover {
+  .products .left-tabs .transparent-container button:hover, .products .left-tabs .transparent-container label:hover {
     background-color: #00000010;
     color: #000000;
   }
 }
 
-.products-categories button.selected {
+.products .left-tabs .transparent-container button.selected, .products .left-tabs .transparent-container label[data-selected="true"] {
+  background-color: #4f683e;
+  color: #fffafad8;
+}
+
+.products .left-tabs .transparent-container select {
+  border: 0;
+  background: none;
+  color: #000000;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  text-align: start;
+  border-radius: 1ch;
+  transition: all 100ms ease-in-out;
+  font-size: 1em;
+}
+
+@media(hover: hover) {
+  .products .left-tabs .transparent-container select:hover {
+    background-color: #00000010;
+    color: #000000;
+  }
+}
+
+.products .left-tabs .transparent-container select[data-value]:not([data-value="all"]) {
   background-color: #4f683e;
   color: #fffafad8;
 }
