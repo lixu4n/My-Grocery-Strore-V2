@@ -47,7 +47,7 @@ Céleste Duguay :
 are on<br />
 🛠️ New colours for nav bar<br />
 🛠️ Added logos for cart and website title<br />
-🛠️ Adjusted colours for both
+🛠️ Adjusted colours for both<br />
 🛠️ Added search bar<br />
 
 
