@@ -178,3 +178,20 @@ header .logo {
   display: grid;
   place-items: center;
 }
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-container > div {
+  display: flex;
+  flex-direction: row;
+}
+
+.cart-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
