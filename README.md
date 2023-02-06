@@ -29,7 +29,7 @@ Chentao Jin:
 🔨 Implemented toast confirmation when adding items to cart<br />
 🔨 Implemented website signature<br />
 🛠️ Implemented breadcrumbs and shipping info<br/>
-🛠️Added price to each product item in the cart
+🛠️Added price to each product item in the cart<br />
 🛠️Added additional buttons to navigate between all the shipping steps<br/>
 🛠️Added checkout page
 
