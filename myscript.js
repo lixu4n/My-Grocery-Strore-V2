@@ -104,7 +104,6 @@ const renderCart = () => {
   const cartIconElement = document.querySelector(".cart-icon");
   cartIconElement.setAttribute("data-count", cart.length);
 
-  var productsName = [];
   var cartContainerElement = document.getElementById("displayCart");
   cartContainerElement.innerHTML = "";
   var content = document.createElement("div");
@@ -127,7 +126,13 @@ const renderCart = () => {
     content.append(item);
   }
 
-  content.append(document.createTextNode("The total price is $" + 0));
+  let totalCartPrice = 0;
+  for (const productId of cart) {
+    let productPrice = products.find((product) => product.id === productId.id).price;
+    totalCartPrice += productPrice;
+  }
+  content.append(document.createTextNode("The total price is $" + totalCartPrice));
+  
   cartContainerElement.append(content);
 
   document.getElementById("cart-button").classList.remove("button-hidden");
