@@ -20,7 +20,6 @@ document.addEventListener(
       //ACTIVE tab switching
       const allTabs = document.getElementsByClassName("tab");
       for (let i = 0; i < allTabs.length; i++) {
-        
         allTabs[i].classList.remove("is-active", "tab-active");
       }
       this.classList.add("is-active", "tab-active");
@@ -66,10 +65,12 @@ const renderProducts = (products) => {
     const productCheckbox = document.createElement("input");
     productCheckbox.type = "checkbox";
     productCheckbox.name = product.name;
-    productCheckbox.checked = cart.some((cartProduct) => cartProduct.id === product.id);
+    productCheckbox.checked = cart.some(
+      (cartProduct) => cartProduct.id === product.id
+    );
     productCheckbox.addEventListener("change", (e) => {
       if (e.target.checked) {
-        cart.push({ id: product.id });
+        cart.push({id: product.id});
       } else {
         cart = cart.filter((cartProduct) => cartProduct.id !== product.id);
       }
@@ -174,4 +175,11 @@ const NextPage = (index) => {
   if (index == 3) {
     document.getElementById("order-button").classList.remove("button-hidden");
   }
+};
+
+const PlaceOrder = () => {
+  const tab = document.getElementsByClassName("is-show")[0];
+  console.log(tab);
+  tab.classList.remove("is-show");
+  document.getElementsByClassName("tab-E")[0].classList.add("is-show");
 };

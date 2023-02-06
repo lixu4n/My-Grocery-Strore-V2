@@ -52,9 +52,8 @@ header .logo {
 
 .tab-active {
   background-color: #4b6043;
-  }
+}
 
-  
 .panel-group {
   border: solid 1px #75975e;
   border-top: none;
@@ -155,7 +154,6 @@ header .logo {
   cursor: pointer;
   width: 40px;
   height: 40px;
-
 }
 .product p {
   font-size: 13px;
@@ -177,6 +175,37 @@ header .logo {
   height: 1.5rem;
   display: grid;
   place-items: center;
+}
+
+.tab-E {
+  text-align: center;
+}
+
+.tab-E input {
+  margin-bottom: 5px;
+  padding: 5px 20px;
+
+  min-width: 300px;
+  border-radius: 1em;
+  background-color: #75965e;
+  border-width: 0;
+  min-height: 40px;
+  font-family: inherit;
+  color: antiquewhite;
+  font-size: large;
+}
+
+.tab-E button {
+  padding: 5px 20px;
+  margin-top: 100px;
+  min-width: 200px;
+  border-radius: 1em;
+  background-color: #75965e;
+  border-width: 0;
+  min-height: 40px;
+  font-family: inherit;
+  color: antiquewhite;
+  font-size: large;
 }
 
 .cart-container {
