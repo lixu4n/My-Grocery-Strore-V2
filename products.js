@@ -103,13 +103,14 @@ const products = [
 
 /**
  * Current state of the filters
- * @type {{vegetarian: boolean, glutenFree: boolean, organic: 'all'|'organic'|'nonOrganic', category: 'all'|'meat'|'grains'|'vegetables'|'dairy'|'fruits'}}
+ * @type {{vegetarian: boolean, glutenFree: boolean, organic: 'all'|'organic'|'nonOrganic', category: 'all'|'meat'|'grains'|'vegetables'|'dairy'|'fruits', search: string}}
  */
 const state = {
   vegetarian: false,
   glutenFree: false,
   organic: 'all',
   category: 'all',
+  search: '',
 };
   
   /**
@@ -174,6 +175,9 @@ const getFilteredProducts = () => {
     if (category !== 'all' && category !== product.category) {
       return false;
     }
+    if (state.search && !product.name.toLowerCase().includes(state.search.toLowerCase())) {
+      return false;
+    }
     return true;
   });
 
@@ -203,4 +207,13 @@ const selectOrganic = (event) => {
   state.organic = event.target.value;
   event.target.setAttribute("data-value", event.target.value);
   updateProducts();
+<<<<<<< HEAD
 }
+=======
+}
+
+const searchForProduct = (event) => {
+  state.search = event.target.value;
+  updateProducts();
+}
+>>>>>>> f7fea1e92be2136ff53b710909028a04933abe14

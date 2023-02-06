@@ -120,6 +120,24 @@
   font-weight: 600;
 }
 
+.products .left-tabs input[type="text"] {
+  border: 0;
+  background: none;
+  color: #000000;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  text-align: start;
+  border-radius: 1ch;
+  transition: all 100ms ease-in-out;
+  background-color: #75975e;
+  width: 100%;
+}
+.products .left-tabs input[type="text"]::placeholder {
+  color: #00000082;
+}
+
 .products .left-tabs .transparent-container {
   display: flex;
   flex-direction: column;

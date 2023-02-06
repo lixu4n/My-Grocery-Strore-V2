@@ -160,3 +160,21 @@ header .logo {
 .product p {
   font-size: 13px;
 }
+
+.cart-icon {
+  position: relative;
+}
+.cart-icon::after {
+  content: attr(data-count);
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  background: #f6f6f6;
+  color: #161616;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+}

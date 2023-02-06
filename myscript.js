@@ -101,6 +101,9 @@ const renderProducts = (products) => {
 const renderCart = () => {
   toastPop("Products added to cart");
 
+  const cartIconElement = document.querySelector(".cart-icon");
+  cartIconElement.setAttribute("data-count", cart.length);
+
   var productsName = [];
   var cartContainerElement = document.getElementById("displayCart");
   cartContainerElement.innerHTML = "";
