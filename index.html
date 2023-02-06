@@ -12,7 +12,6 @@
     <link href="cart.css" rel="stylesheet" type="text/css" />
     <link href="products.css" rel="stylesheet" type="text/css" />
     <script src="myscript.js"></script>
-    <script src="mysearch.js"></script>
 
   </head>
   <body>
@@ -57,14 +56,10 @@
 
         <div class="products">
           <div class="left-tabs">
-            <div class="name">Categories</div>
             <div class="search-container">
-              <form action="#" method="post">
-                <input type="text" placeholder="Search..." name="search-input">
-                <button type="submit">Go</button>
-              </form>
-              <div id="search-results"></div>
+              <input type="text" oninput="searchForProduct(event)" placeholder="Search..." name="search-input">
             </div>
+            <div class="name">Categories</div>
             <div class="products-categories transparent-container">
               <button class="selected" onclick="selectFoodCategory(event)" value="all">All</button>
               <button onclick="selectFoodCategory(event)" value="fruits">Fruits</button>
