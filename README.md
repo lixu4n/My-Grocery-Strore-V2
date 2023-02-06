@@ -3,8 +3,9 @@ This is a dynamic webpage using HTML, CSS and JavaScript created for lab 3 of SE
 
 👉🏻 This dynamic simple website is deployed Github Pages
 
-👉🏻 Link to this GitHub repository: https://github.com/lixu4n/My-Grocery-Store
+👉🏻 Link to this GitHub repository: https://github.com/lixu4n/My-Grocery-Strore-V2
 
+👉🏻 Link to the GitHub repository of older website version: https://github.com/lixu4n/My-Grocery-Store 
 
 # 📎 General Info
 SEG3125
@@ -26,8 +27,8 @@ Chentao Jin:
 🔨 Implemented toast confirmation when adding items to cart<br />
 🔨 Implemented website signature<br />
 🛠️ Implemented breadcrumbs and shipping info<br/>
-🛠️Added price to each product item in the cart
-🛠️Added additional buttons to navigate between all the shopping steps
+🛠️Added price to each product item in the cart<br/>
+🛠️Added additional buttons to navigate between all the shopping steps<br/>
 
 
 
@@ -43,7 +44,7 @@ Céleste Duguay :
 are on<br />
 🛠️ New colours for nav bar<br />
 🛠️ Added logos for cart and website title<br />
-🛠️ Adjusted colours for both
+🛠️ Adjusted colours for both<br/>
 🛠️ Added search bar<br />
 
 
