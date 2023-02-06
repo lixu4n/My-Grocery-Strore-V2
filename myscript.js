@@ -104,27 +104,35 @@ const renderCart = () => {
   const cartIconElement = document.querySelector(".cart-icon");
   cartIconElement.setAttribute("data-count", cart.length);
 
-  var productsName = [];
   var cartContainerElement = document.getElementById("displayCart");
   cartContainerElement.innerHTML = "";
-  var content = document.createElement("P");
+  var content = document.createElement("div");
 
   content.innerHTML = "You have selected: ";
-  content.append(document.createElement("br"));
 
   for (const ele of cart) {
     let productName = products.find((product) => product.id === ele.id).name;
     let productPrice = products.find((product) => product.id === ele.id).price;
-    var item = document.createTextNode(
-      productName + " $" + productPrice
-    );
+    let productImage = products.find((product) => product.id === ele.id).img;
+    var item = document.createElement("div");
+    item.classList.add("cart-container");
+    item.innerHTML = `
+            <img src="images/${productImage}" alt="${productName}" />
+            <div>
+            <span class="product-name" price="${productPrice}">${productName}</span>
+            <span class="product-price">$${productPrice}</span>
+            </div>
+        `;
     content.append(item);
-    content.append(document.createElement("br"));
-    productsName.push(productName);
   }
 
-  var price = getTotalPrice(productsName);
-  content.append(document.createTextNode("The total price is $" + price));
+  let totalCartPrice = 0;
+  for (const productId of cart) {
+    let productPrice = products.find((product) => product.id === productId.id).price;
+    totalCartPrice += productPrice;
+  }
+  content.append(document.createTextNode("The total price is $" + totalCartPrice));
+  
   cartContainerElement.append(content);
 
   document.getElementById("cart-button").classList.remove("button-hidden");
