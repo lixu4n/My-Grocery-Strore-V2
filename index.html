@@ -12,17 +12,26 @@
     <link href="cart.css" rel="stylesheet" type="text/css" />
     <link href="products.css" rel="stylesheet" type="text/css" />
     <script src="myscript.js"></script>
-
   </head>
   <body>
     <div class="tab-panel">
       <header>
         <!--add website link-->
-        <a href="#" class="logo"><img src="img_read_me/yumslogo.png" width="250" height="65"></a>
+        <a href="#" class="logo"
+          ><img src="img_read_me/yumslogo.png" width="250" height="65"
+        /></a>
         <ul class="tab-group">
           <li class="tab tab-A is-active tab-active"><a>Home</a></li>
           <li class="tab tab-C"><a>Products</a></li>
-          <li class="tab tab-D cart-icon" data-count="0"><a><img src="images/cartlogo.png" alt="cartlogo" width="25" height="25"></a></li>
+          <li class="tab tab-D cart-icon" data-count="0">
+            <a
+              ><img
+                src="images/cartlogo.png"
+                alt="cartlogo"
+                width="25"
+                height="25"
+            /></a>
+          </li>
         </ul>
       </header>
     </div>
@@ -49,7 +58,10 @@
       <div class="panel tab-C">
         <h2>Your YUMS! Store</h2>
         <br />
-        <p>In order to get products based on your requirements, please scroll down to the filters and select all that apply.</p>
+        <p>
+          In order to get products based on your requirements, please scroll
+          down to the filters and select all that apply.
+        </p>
         <br />
         <p>Choose items to buy.</p>
         <br />
@@ -57,25 +69,65 @@
         <div class="products">
           <div class="left-tabs">
             <div class="search-container">
-              <input type="text" oninput="searchForProduct(event)" placeholder="Search..." name="search-input">
+              <input
+                type="text"
+                oninput="searchForProduct(event)"
+                placeholder="Search..."
+                name="search-input"
+              />
             </div>
             <div class="name">Categories</div>
             <div class="products-categories transparent-container">
-              <button class="selected" onclick="selectFoodCategory(event)" value="all">All</button>
-              <button onclick="selectFoodCategory(event)" value="fruits">Fruits</button>
-              <button onclick="selectFoodCategory(event)" value="vegetables">Vegetables</button>
-              <button onclick="selectFoodCategory(event)" value="meat">Meat</button>
-              <button onclick="selectFoodCategory(event)" value="dairy">Dairy</button>
-              <button onclick="selectFoodCategory(event)" value="bakery">Bakery</button>
-              <button onclick="selectFoodCategory(event)" value="grains">Grains</button>
+              <button
+                class="selected"
+                onclick="selectFoodCategory(event)"
+                value="all"
+              >
+                All
+              </button>
+              <button onclick="selectFoodCategory(event)" value="fruits">
+                Fruits
+              </button>
+              <button onclick="selectFoodCategory(event)" value="vegetables">
+                Vegetables
+              </button>
+              <button onclick="selectFoodCategory(event)" value="meat">
+                Meat
+              </button>
+              <button onclick="selectFoodCategory(event)" value="dairy">
+                Dairy
+              </button>
+              <button onclick="selectFoodCategory(event)" value="bakery">
+                Bakery
+              </button>
+              <button onclick="selectFoodCategory(event)" value="grains">
+                Grains
+              </button>
             </div>
             <div class="name">Filter</div>
             <div class="products-filters transparent-container">
               <label for="vegetarian1">Vegetarian</label>
-              <input type="checkbox" id="vegetarian1" name="vegetarian" class="requirement1" onchange="getRequirements()" />
+              <input
+                type="checkbox"
+                id="vegetarian1"
+                name="vegetarian"
+                class="requirement1"
+                onchange="getRequirements()"
+              />
               <label for="glutenFree1">Gluten Free</label>
-              <input type="checkbox" id="glutenFree1" name="glutenFree" class="requirement1" onchange="getRequirements()" />
-              <select id="organic1" name="organic" class="requirement" onchange="selectOrganic(event)">
+              <input
+                type="checkbox"
+                id="glutenFree1"
+                name="glutenFree"
+                class="requirement1"
+                onchange="getRequirements()"
+              />
+              <select
+                id="organic1"
+                name="organic"
+                class="requirement"
+                onchange="selectOrganic(event)"
+              >
                 <option value="all">Organic & Non Organic</option>
                 <option value="organic">Organic</option>
                 <option value="nonOrganic">Non-organic</option>
@@ -98,17 +150,42 @@
         <p>Your total is :</p>
         <div id="displayCart"></div>
         <div class="button-center">
-          <button id="order-button" class="button-hidden">Place Order</button>
+          <button
+            id="order-button"
+            class="button-hidden"
+            onclick="PlaceOrder()"
+          >
+            Place Order
+          </button>
         </div>
 
         <br />
         <br />
         <p>Thank You for shopping at YUMS!</p>
         <!--return to home page--><button onclick="href:">Shop More</button>
-        <br>
-        
-        <p>Forgot something? You are always welcomed back, here at YUMS!</p>
+        <br />
 
+        <p>Forgot something? You are always welcomed back, here at YUMS!</p>
+      </div>
+      <div class="panel tab-E">
+        <label id="street-address" name="street-address">Street Address</label
+        ><br />
+        <input type="text" for="street-address" /><br />
+        <label id="city" name="city">City</label><br />
+        <input type="text" for="city" /><br />
+        <label id="postal-code" name="postal-code">Postal Code</label><br />
+        <input type="text" for="postal-code" /><br />
+        <label name="province" id="province">Province</label><br />
+        <input type="text" for="province" /><br />
+        <label name="card" id="card">Card Number</label><br />
+        <input
+          type="number"
+          for="card"
+          placeholder="xxxx-xxxx-xxxx-xxxx"
+        /><br />
+        <label name="date" id="date">expiration date</label><br />
+        <input type="text" for="date" placeholder="MM/YYYY" /><br />
+        <button>Submit Order</button>
       </div>
     </div>
     <div>
