@@ -207,13 +207,9 @@ const selectOrganic = (event) => {
   state.organic = event.target.value;
   event.target.setAttribute("data-value", event.target.value);
   updateProducts();
-<<<<<<< HEAD
-}
-=======
 }
 
 const searchForProduct = (event) => {
   state.search = event.target.value;
   updateProducts();
 }
->>>>>>> f7fea1e92be2136ff53b710909028a04933abe14
