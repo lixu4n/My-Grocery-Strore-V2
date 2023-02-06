@@ -3,9 +3,11 @@ This is a dynamic webpage using HTML, CSS and JavaScript created for lab 3 of SE
 
 👉🏻 This dynamic simple website is deployed Github Pages
 
-👉🏻 Link to this GitHub repository: https://github.com/lixu4n/My-Grocery-Strore-V2
+👉🏻 Link to this GitHub repository: https://github.com/lixu4n/My-Grocery-Strore-V2<br />
 
-👉🏻 Link to the GitHub repository of older website version: https://github.com/lixu4n/My-Grocery-Store
+👉🏻 Link to the GitHub repository of older website version: https://github.com/lixu4n/My-Grocery-Store<br />
+
+👉🏻 Resources for our icons and logos: https://www.flaticon.com/ and for logo inspo: https://looka.com/logo-maker/?gclid=CjwKCAiAxP2eBhBiEiwA5puhNQFsV3BebR2xx8J8G71UoQJ1Igp-uStbCl0MkAhdHr7_f-Raxe9InBoCFcAQAvD_BwE<br />
 
 # 📎 General Info
 SEG3125
